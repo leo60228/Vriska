@@ -32,15 +32,24 @@ namespace Celeste.Mod.Rainbow {
 
             On.Celeste.Player.Update += Player_Update;
             On.Celeste.PlayerHair.Render += RenderHair;
+            On.Celeste.PlayerSprite.ctor += PlayerSprite_ctor;
         }
 
         public override void LoadContent(bool firstLoad) {
-            Horns = GFX.Game["characters/player/horns"];
+            Horns = GFX.Game["characters/player_no_backpack/horns"];
         }
 
         public override void Unload() {
             On.Celeste.Player.Update -= Player_Update;
             On.Celeste.PlayerHair.Render -= RenderHair;
+            On.Celeste.PlayerSprite.ctor -= PlayerSprite_ctor;
+        }
+
+        public void PlayerSprite_ctor(On.Celeste.PlayerSprite.orig_ctor orig, PlayerSprite self, PlayerSpriteMode mode) {
+            if (mode == PlayerSpriteMode.Madeline) {
+                mode = PlayerSpriteMode.MadelineNoBackpack;
+            }
+            orig(self, mode);
         }
 
         private void Player_Update(On.Celeste.Player.orig_Update orig, Player self)
@@ -65,10 +74,10 @@ namespace Celeste.Mod.Rainbow {
             }
 
             PlayerSprite sprite = self.GetSprite();
+            Vector2 origin = new Vector2(5f, 5f);
             if (!sprite.HasHair || (self.Border * self.Alpha).A <= 0 || sprite.HairCount <= 0 || player.StateMachine.State == Player.StDreamDash)
                 return;
 
-            Vector2 origin = new Vector2(5f, 5f);
 
             Vector2 pos;
 
