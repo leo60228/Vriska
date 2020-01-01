@@ -75,7 +75,7 @@ namespace Celeste.Mod.Rainbow {
 
             PlayerSprite sprite = self.GetSprite();
             Vector2 origin = new Vector2(5f, 5f);
-            if (!sprite.HasHair || (self.Border * self.Alpha).A <= 0 || sprite.HairCount <= 0 || player.StateMachine.State == Player.StDreamDash)
+            if (!sprite.HasHair || (self.Border * self.Alpha).A <= 0 || sprite.HairCount <= 0 || sprite.DreamDashing)
                 return;
 
 
