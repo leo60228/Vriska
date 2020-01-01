@@ -19,7 +19,5 @@
 # {anchor} controls the visual position of the textbox in-game
 
 # Rainbow Module Options
-	MODOPTIONS_RAINBOWMODULE_TITLE= 	Fabeline
+	MODOPTIONS_RAINBOWMODULE_TITLE= 	Vriska
 	MODOPTIONS_RAINBOWMODULE_ENABLED= 	Enabled
-	MODOPTIONS_RAINBOWMODULE_SPEED= 	Speed
-	MODOPTIONS_RAINBOWMODULE_RELOADCOLORS= 	Reload Color Settings
