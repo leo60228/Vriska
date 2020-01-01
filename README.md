@@ -4,7 +4,7 @@
 
 ----
 
-[![]("https://gamebanana.com/skins/embeddables/174193?type=large")](https://gamebanana.com/skins/174193)
+[![](https://gamebanana.com/skins/embeddables/174193?type=large)](https://gamebanana.com/skins/174193)
 
 ![preview](/vriska.png)
 
