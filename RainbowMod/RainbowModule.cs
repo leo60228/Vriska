@@ -78,13 +78,13 @@ namespace Celeste.Mod.Rainbow {
             if (!sprite.HasHair || (self.Border * self.Alpha).A <= 0 || sprite.HairCount <= 0 || sprite.DreamDashing)
                 return;
 
-
             Vector2 pos;
+            Vector2 scale = self.GetHairScale(0);
 
             self.Nodes[0] = self.Nodes[0].Floor();
 
             pos = self.Nodes[0];
-            Horns.Draw(pos + new Vector2(2f, -4f), origin);
+            Horns.Draw(pos + new Vector2(scale.X < 0 ? -3f : 3f, -4f), origin, Color.White * self.Alpha, scale);
 
             orig(self);
         }
